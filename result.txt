@@ -1,0 +1,11 @@
+Input string: id ^ id ^ id ; id ^ id
+
+Tokens detected by the scanner:
+ID  POWER  ID  POWER  ID  SEMI  ID  POWER  ID
+
+Parsing result:
+Accepted. The input string matches the grammar.
+
+Files generated:
+- tree.dot
+- tree.png

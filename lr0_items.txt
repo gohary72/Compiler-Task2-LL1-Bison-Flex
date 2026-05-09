@@ -1,0 +1,25 @@
+Augmented grammar:
+S0 -> S
+S  -> P S'
+S' -> ; P S' | epsilon
+P  -> id R
+R  -> ^ id R | epsilon
+
+LR(0) item sets (short form):
+I0: S0 -> . S, S -> . P S', P -> . id R
+I1: S0 -> S .
+I2: S -> P . S', S' -> . ; P S', S' -> . epsilon
+I3: P -> id . R, R -> . ^ id R, R -> . epsilon
+I4: S -> P S' .
+I5: S' -> ; . P S', P -> . id R
+I6: P -> id R .
+I7: R -> ^ . id R
+I8: S' -> ; P . S', S' -> . ; P S', S' -> . epsilon
+I9: R -> ^ id . R, R -> . ^ id R, R -> . epsilon
+I10: S' -> ; P S' .
+I11: R -> ^ id R .
+
+Note:
+The epsilon productions create LR(0) shift/reduce situations if no lookahead is used.
+With FOLLOW-based lookahead (as in LL(1)/SLR idea), the grammar parses the given string correctly.
+Bison uses lookahead, so the implementation is still suitable for this task.

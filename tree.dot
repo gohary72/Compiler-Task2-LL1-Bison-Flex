@@ -1,0 +1,49 @@
+digraph ParseTree {
+  graph [rankdir=TB];
+  node [shape=circle, fontname="Arial"];
+
+  S0 [label="S"];
+  P1 [label="P"];
+  SP1 [label="S'"];
+  id1 [label="id"];
+  R1 [label="R"];
+  pow1 [label="^"];
+  id2 [label="id"];
+  R2 [label="R"];
+  pow2 [label="^"];
+  id3 [label="id"];
+  R3 [label="R"];
+  eps1 [label="ε"];
+  semi [label=";"];
+  P2 [label="P"];
+  SP2 [label="S'"];
+  id4 [label="id"];
+  R4 [label="R"];
+  pow3 [label="^"];
+  id5 [label="id"];
+  R5 [label="R"];
+  eps2 [label="ε"];
+  eps3 [label="ε"];
+
+  S0 -> P1;
+  S0 -> SP1;
+  P1 -> id1;
+  P1 -> R1;
+  R1 -> pow1;
+  R1 -> id2;
+  R1 -> R2;
+  R2 -> pow2;
+  R2 -> id3;
+  R2 -> R3;
+  R3 -> eps1;
+  SP1 -> semi;
+  SP1 -> P2;
+  SP1 -> SP2;
+  P2 -> id4;
+  P2 -> R4;
+  R4 -> pow3;
+  R4 -> id5;
+  R4 -> R5;
+  R5 -> eps2;
+  SP2 -> eps3;
+}
